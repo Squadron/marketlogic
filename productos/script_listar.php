@@ -93,9 +93,9 @@ if (empty($productos)) {
     ?>
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <?php if (!empty($producto['imagen_url'])): ?>
-            <img src="../<?= htmlspecialchars($producto['imagen_url']) ?>" 
-                 alt="<?= htmlspecialchars($producto['nombre']) ?>" 
-                 @click="showModal = true; imageSrc = '../<?= htmlspecialchars($producto['imagen_url']) ?>'; imageAlt = '<?= htmlspecialchars($producto['nombre']) ?>'" 
+            <img src="../<?= htmlspecialchars($producto['imagen_url'], ENT_QUOTES, 'UTF-8') ?>" 
+                 alt="<?= htmlspecialchars($producto['nombre'], ENT_QUOTES, 'UTF-8') ?>" 
+                 @click="showModal = true; imageSrc = &quot;../<?= htmlspecialchars($producto['imagen_url'], ENT_QUOTES, 'UTF-8') ?>&quot;; imageAlt = &quot;<?= htmlspecialchars($producto['nombre'], ENT_QUOTES, 'UTF-8') ?>&quot;" 
                  class="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity">
             <?php else: ?>
             <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-500">
@@ -106,15 +106,15 @@ if (empty($productos)) {
             <div class="p-4">
                 <div class="flex justify-between items-start mb-2">
                     <h3 class="text-lg font-semibold text-gray-800">
-                        <?= htmlspecialchars($producto['nombre']) ?>
+                        <?= htmlspecialchars($producto['nombre'], ENT_QUOTES, 'UTF-8') ?>
                     </h3>
                     <span class="px-2 py-1 rounded-full text-xs <?= $estadoClase ?>">
-                        <?= ucfirst($producto['estado']) ?>
+                        <?= ucfirst(htmlspecialchars($producto['estado'], ENT_QUOTES, 'UTF-8')) ?>
                     </span>
                 </div>
                 
                 <p class="text-gray-600 text-sm mb-4">
-                    <?= htmlspecialchars($producto['descripcion']) ?>
+                    <?= htmlspecialchars($producto['descripcion'], ENT_QUOTES, 'UTF-8') ?>
                 </p>
                 
                 <div class="flex justify-between items-center">
@@ -122,7 +122,7 @@ if (empty($productos)) {
                         $<?= number_format($producto['precio'], 2) ?>
                     </span>
                     <span class="text-sm text-gray-500">
-                        Stock: <?= $producto['stock'] ?>
+                        Stock: <?= htmlspecialchars($producto['stock'], ENT_QUOTES, 'UTF-8') ?>
                     </span>
                 </div>
                 

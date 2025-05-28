@@ -16,9 +16,9 @@ El proyecto Market Logic fue desarrollado utilizando HTMX y PHP como tecnología
 
 1.- HTMX es liviano y NO tiene dependencias / ReactJS tiene dependencias hasta para un Hola Mundo
 
-2.- HTMX es como Tailwind pero para el JS, se integra muy bien con HTML lo que permite desarrollar rapido (Con reactJS hay que tocar muchos archivos para hacer algo o modificar algo). Esto permite dar con algun error y corregirlo rapidamente, cubre el 99% de las cosas que se requieren para una aplicacion, aun asi, se puede integrar tambien con AlphineJS de manera que se potencia, y puede hacer mas cosas como manejar estados por ejemplo
+2.- HTMX es como Tailwind pero para el JS, se integra muy bien con HTML lo que permite desarrollar rapido (Con reactJS hay que tocar muchos archivos para hacer algo o modificar algo). Esto permite dar con algun error y corregirlo rapidamente, cubre el 99% de las cosas que se requieren para una aplicacion, aun asi, se puede integrar tambien con AlphineJS u otras bibliotecas para potenciarlo, y puede hacer mas cosas como manejar estados por ejemplo
 
-3.- Al desarrollar con HTML y PHP no se necesita desplegar nada, esta listo para usar directamente en cualquier servidor web, no se necesita hosting o servicios especiales como Vercel por ejemplo, ademas de usar muchos menos recursos.
+3.- Al desarrollar con HTML y PHP no se necesita desplegar nada, esta listo para usar directamente en cualquier servidor web, no se necesita hosting o servicios especiales como Vercel por ejemplo.
 
 4.- En general con HTMX se puede hacer implementaciones mas rapidas y cambios o correcciones al vuelo, no tocas mas de un archivo. No hay que compilar nada, ni desplegar, solo soltar y listo! Se logra lo mismo pero sin la complejidad de React que como minimo requiere que se conozca muchas conceptos como componentes, hooks, estado global y virtual DOM, entre otros.
 
@@ -108,6 +108,7 @@ Cuentas de prueba pre-instaladas:
     - Crear, editar y eliminar productos.
     - Realizar búsquedas avanzadas por nombre, categoría o estado.
     - Subir imágenes de productos.
+
 2. Poblar Productos desde una API Externa
     
     El sistema permite poblar productos desde una API externa gratuita como Fake Store API.
@@ -118,6 +119,7 @@ Cuentas de prueba pre-instaladas:
     - Configura la URL de la API (por defecto: https://fakestoreapi.com/products) y la cantidad de productos a importar.
     - Haz clic en "Iniciar Importación".
     - Los productos serán importados y mostrados en la lista.
+
 3. Carga Masiva de Productos desde Excel
     
     El sistema permite cargar productos desde un archivo Excel.
@@ -135,9 +137,10 @@ Cuentas de prueba pre-instaladas:
     - categoria: Categoría del producto.
     - estado: Estado del producto (activo, inactivo, agotado).
     
-    Nota: Las imágenes no se incluyen en la carga masiva y se establecerán como NULL.
+    Nota: Las imágenes no se incluyen en la carga masiva y se establecerán como NULL, Mientras que en la carga manual son opcionales
     
     Haz clic en "Cargar" para procesar el archivo.
+    
 4. Gestión de Usuarios
 
     - Crear, editar y eliminar usuarios.
@@ -172,3 +175,14 @@ Cuentas de prueba pre-instaladas:
 ### 10. Archivo Excel de prueba con el formato adecuado
 
 1.- En la carpeta "Fuente" tambien esta un arrchivo Excel para prueba con el formato adecuado y algunos datos de prueba llamado "plantilla_productos_carga_masiva_v2.xlsx"
+
+### 5. Notas Adicionales
+
+Seguridad:
+
+- Todas las entradas del usuario se validan y sanitizan para evitar inyecciones SQL y XSS.
+- Las contraseñas se almacenan de forma segura utilizando algoritmos de hashing.
+
+Extensibilidad:
+
+- El sistema está diseñado para ser fácilmente extensible, permitiendo agregar nuevas funcionalidades sin afectar las existentes.

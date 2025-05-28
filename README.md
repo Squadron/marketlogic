@@ -25,7 +25,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto:
 Clona este repositorio en tu servidor local:
 
 ```bash
-git clone https://github.com/tu-usuario/market-logic.git
+git clone https://github.com/Squadron/marketlogic.git
 cd market-logic
 ```
 
